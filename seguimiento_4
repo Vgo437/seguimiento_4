@@ -1,0 +1,57 @@
+class personaje{
+    constructor(info){
+        this.nombre=info.nombre;
+        this.objetivo=info.objetivo;
+        this.sonido=info.sonido;
+        this.color=info.color;
+        this.tipoMovimiento=info.tipoMovimiento;
+        
+
+    }
+
+    movimiento(){
+          return console.log(`el personaje ${this.nombre} tiene un movimiento ${this.tipoMovimiento}`) ;
+    }
+    Objetivo(){
+        return console.log(`el personsaje ${this.nombre} tiene como objetivo ${this.objetivo}`);
+    }
+
+
+}
+
+class monstruo extends personaje{
+    constructor(info){
+        super (info)
+    }
+
+    eliminar(){
+        return console.log(`el personaje tiene como objetivo eliminar los otros personajes`);
+    }
+    Sonido(){
+        return console.log('grrr')
+    }
+    
+}
+
+
+const perso={
+    nombre:'monstruo',
+    objetivo:{nombre:'zombie',descripcion:'Debe eliminar los otros personajes', movimiento:'camina lento',sonido:'grrr',vidas:2},
+    sonido:'grrrr',
+    color:'verde',
+    tipoMovimiento:'caminar',
+}
+const aux=new personaje(perso);
+console.log(aux)
+console.log(aux.movimiento());
+
+
+const Persomons={
+    nombre:'monstruo',
+    objetivo:{nombre:'fantasma',descripcion:'ente sin forma que asusta', movimiento:'flota',sonido:'boo',vidas:3},
+    sonido:'booo',
+    color:'sin color',
+    tipoMovimiento:'flota'
+}
+const info2=new monstruo(Persomons)
+console.log(info2)
